@@ -1,0 +1,131 @@
+
+
+.pokedex-container {
+    text-align: center;
+    margin-bottom: 100px;
+    padding: 30px;
+
+    background: linear-gradient(180deg, #ffcc00 40%, #ff3e3e 100%);
+    min-height: 100vh;
+    color: white;
+    font-family: 'Arial', sans-serif;
+}
+
+h1 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.pokemon-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    list-style: none;
+}
+
+.pokemon-item {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.pokemon-item:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.4);
+    background: rgba(255, 255, 255, 1);
+}
+
+.pokemon-item::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    top: -100%;
+    left: 0;
+    transition: top 0.3s ease-in-out;
+}
+
+.pokemon-item:hover::before {
+    top: 0;
+}
+
+.pokemon-item img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.pokemon-item:hover img {
+    transform: rotate(10deg);
+}
+
+.pokemon-name {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #ff6b6b;
+    text-transform: capitalize;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.pokemon-item:hover .pokemon-name {
+    color: #d32f2f;
+}
+
+
+@media screen and (max-width: 768px) {
+
+    .pokedex-container h1{
+        font-size: 22px;
+    }
+    .pokemon-list {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); 
+        gap: 10px; 
+    }
+
+    .pokemon-item {
+        padding: 10px; 
+    }
+
+    .pokemon-item img {
+        width: 80px; 
+        height: 80px; 
+    }
+
+    .pokemon-name {
+        font-size: 1rem; 
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .pokemon-list {
+        grid-template-columns: 2fr; 
+        gap: 10px;
+
+    }
+
+    .pokemon-item {
+        padding: 10px;
+    }
+
+    .pokemon-item img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .pokemon-name {
+        font-size: 1.1rem;
+    }
+}
