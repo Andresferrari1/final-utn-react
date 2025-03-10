@@ -12,7 +12,7 @@ const Home = () => {
                 <img src="/assets/pokemon_banner.jpg" alt="Pokédex Banner" className="banner" />
 
                 <h1 className="title">¡Bienvenido a la Pokédex Online!</h1>
-                <p className="intro-text">Explora el mundo de los Pokémon, consulta sus estadísticas y aprende más sobre ellos.</p>
+                <p className="intro-text">Explora el mundo de los Pokémon, consulta sus estadísticas y aprende mucho más sobre ellos.</p>
 
                 <button className="explore-btn" onClick={() => navigate("/pokedex")}>
                     ¡Explora la Pokédex!
